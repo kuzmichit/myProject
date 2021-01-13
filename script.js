@@ -8,3 +8,4 @@ function startQuiz () {
   questionElem.classList.remove( 'hidden' );
 
  }
+ 

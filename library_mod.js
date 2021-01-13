@@ -1,6 +1,6 @@
 'use strict';
-let arr = [1, 2, 3, 'Hello'];
-let obj = {
+const arr = [1, 2, 3, 'Hello'];
+const obj = {
   "Рыбы": {
     "форель": {},
     "лосось": {}
@@ -16,5 +16,8 @@ let obj = {
     }
   }
 };
+const cl = arg => console.log(arg);
+const cd = arg => console.dir(arg);
+const al = arg => alert(arg);
 
 export {arr, obj};
