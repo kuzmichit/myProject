@@ -4,18 +4,20 @@ let ball = document.querySelector('.ball');
 let field = document.querySelector('.field');
 let coordsField = field.getBoundingClientRect();
 let coordsBall = ball.getBoundingClientRect();
-let limitFieldRight = coordsField.right - coordsBall.width;
+let limitFieldRight = coordsField.right - coordsBall.width - field.clientLeft;
 let limitFieldBottom = coordsField.bottom - coordsBall.height;
 
 field.addEventListener('click', moveBall);
 
 function moveBall(evt) {	
 	if(evt.clientX > limitFieldRight) {
-		ball.left = limitFieldRight;
-	} else ball.left = evt.clientX;
+		ball.style.left = limitFieldRight + 'px';
+	} else ball.style.left = evt.clientX + 'px';
 	
 	if (evt.clientY > limitFieldBottom) {
-		ball.top = limitFieldBottom;
-	} else ball.top = evt.clientY;
+		ball.style.top = limitFieldBottom + 'px';
+	} else ball.style.top = evt.clientY + 'px';
+	console.log('top' + coordsField.top);
+	console.log('limit' + limitFieldBottom);
 }
-evt => console.log(evt.clientX);
+//evt = console.log(evt.clientX);
